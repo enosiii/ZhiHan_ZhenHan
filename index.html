@@ -152,6 +152,15 @@
     animation: fadeIn 0.8s ease forwards;
   }
   
+   
+  
+  .bubble-xs {
+    max-width: 150px;
+    min-width: 90px;
+    min-height: 50px;
+    font-size: 0.7em;
+  }
+
   .bubble-small {
     max-width: 180px;
     min-width: 120px;
@@ -216,7 +225,7 @@
   #bubble-container {
     position: relative;
     width: 100%;
-    height: 400px; /* Fixed height to prevent covering title */
+    height: 500px; /* Fixed height to prevent covering title */
     margin: 0 auto;
     overflow: hidden;
   }
@@ -247,7 +256,6 @@
     padding: 1rem 2rem;
     max-width: 1200px;
     margin: 0 auto;
-    position: relative; 
   }
   
   .nav-logo {
@@ -302,12 +310,9 @@
     cursor: pointer;
     color: #4a5568;
   }
-   /* Mobile Navigation - FIXED with left positioning */
+  
+  /* Mobile Navigation */
   @media (max-width: 768px) {
-    .nav-content {
-      padding: 1rem 0;
-    }
-    
     .nav-menu {
       position: fixed;
       top: 70px;
@@ -322,8 +327,6 @@
       opacity: 0;
       visibility: hidden;
       transition: all 0.3s ease;
-      width: 100%;
-      z-index: 999;
     }
     
     .nav-menu.active {
@@ -336,35 +339,23 @@
       display: block;
       padding: 1rem;
       border-bottom: 1px solid #f1f1f1;
-      width: 100%;
     }
     
     .nav-link:last-child {
       border-bottom: none;
     }
     
-    
     .nav-toggle {
       display: block;
       position: absolute;
-      left: 20px; /* Changed from right to left */
-      top: 50%;
-      transform: translateY(-50%);
+      left: 20px;
     }
-      
+    
     .nav-logo {
-    margin-left: 0px; /* Adjust this value as needed */
-    text-align: center;
+    margin-left: 30px; /* Adjust this value as needed */
+    /*text-align: center;*/
     flex: 1;
   }
-    
-  }
-
-
-
-
-
-
   
   /* Smooth scrolling */
   html {
@@ -379,7 +370,7 @@
     <!-- Add this HTML right after the <body> tag -->
         <div class="nav-container" id="navbar">
         <div class="nav-content">
-            <a href="#" class="nav-logo">Zhi Han & Zhen Han</a>
+            <a href="#hero" class="nav-logo">Zhi Han & Zhen Han</a>
             
             <button class="nav-toggle" id="navToggle">
             <i data-feather="menu"></i>
@@ -412,7 +403,7 @@
             <div class="absolute top-0 left-0 w-full h-full bg-gradient-to-b from-transparent to-white opacity-30"></div>
         </div>
         
-        <div class="container mx-auto px-6 py-20 text-center relative z-10 mt-40 md:mt-48" data-aos="fade-up">
+        <div id="hero" class="container mx-auto px-6 py-20 text-center relative z-10 mt-40 md:mt-48" data-aos="fade-up">
             <h1 class="text-4xl md:text-6xl font-bold text-pink-600 mb-4">You're Invited!</h1>
             <p class="text-xl md:text-2xl text-blue-600 mb-8">Join us in celebrating Zhi Han's 2nd Birthday & Zhen Han's Dedication</p>
             
@@ -534,18 +525,8 @@
                         <img src="images/book.jpg" alt="Books" class="w-full h-full object-cover">
                     </div>
                 </div>
-                
-                <div class="gift-item bg-blue-50 rounded-xl p-6 text-center shadow-md" data-aos="fade-up" data-aos-delay="200">
-                    
-                    <h3 class="text-xl font-bold text-blue-600 mb-2">Clothing</h3>
-                    <p class="text-gray-700">Size 2-3 y/o for Zhi Han, 1-2 y/o for Zhen Han</p>
-
-                    <div class="rounded-xl overflow-hidden shadow-md mb-4 mx-auto w-50 h-50">
-                        <img src="images/clothes.jpg" alt="Clothing" class="w-full h-full object-cover">
-                    </div>
-                </div>
-
-                <!-- QR Code Section -->
+              
+               <!-- QR Code Section -->
                 <div class="gift-item bg-purple-50 rounded-xl p-6 text-center shadow-md" data-aos="fade-up" data-aos-delay="400">
                     <h3 class="text-xl font-bold text-purple-600 mb-2">Savings</h3>
                     <p class="text-gray-700">Contributions to the children's future education fund</p>
@@ -559,6 +540,18 @@
                         </div>
                     </div>
                 </div>
+                
+                <div class="gift-item bg-blue-50 rounded-xl p-6 text-center shadow-md" data-aos="fade-up" data-aos-delay="200">
+                    
+                    <h3 class="text-xl font-bold text-blue-600 mb-2">Clothing</h3>
+                    <p class="text-gray-700">Size 2-3 y/o for Zhi Han, 1-2 y/o for Zhen Han</p>
+
+                    <div class="rounded-xl overflow-hidden shadow-md mb-4 mx-auto w-50 h-50">
+                        <img src="images/clothes.jpg" alt="Clothing" class="w-full h-full object-cover">
+                    </div>
+                </div>
+
+               
 
                 <!-- <div class="gift-item bg-purple-52 rounded-xl p-6 text-center shadow-md" data-aos="fade-up" data-aos-delay="400">
                     
@@ -664,7 +657,7 @@
     <section id="wishes" class="warm-wishes-section py-20">
     <div class="container mx-auto px-6">
         <h2 class="text-3xl font-bold text-center mb-8 text-pink-600 section-title" data-aos="fade-up">
-        Warm Wishes ✨
+        Greetings & Warm Wishes ✨
         </h2>
         
         <div id="bubble-container" class="relative w-full">
@@ -676,7 +669,7 @@
     <!-- Send Warm Wishes -->
     <section id="sendwishes" class="py-20 bg-gradient-to-br from-pink-50 to-blue-50">
         <div class="container mx-auto px-6 max-w-2xl">
-            <h2 class="text-3xl font-bold text-center mb-8 text-pink-600" data-aos="fade-up">Send Your Warm Wishes</h2>
+            <h2 class="text-3xl font-bold text-center mb-8 text-pink-600" data-aos="fade-up">Send Your Greetings & Warm Wishes</h2>
             
             <div class="bg-white rounded-xl p-8 shadow-lg" data-aos="fade-up" data-aos-delay="100">
                  
@@ -1007,7 +1000,7 @@
         const bubble = document.createElement('div');
         
         // Randomly determine bubble size
-        const sizes = ['small', 'medium', 'large'];
+        const sizes = ['xs', 'small', 'medium'];
         const size = sizes[Math.floor(Math.random() * sizes.length)];
         bubble.className = `bubble bubble-${size}`;
         
@@ -1055,7 +1048,7 @@
         y: parseInt(bubble.style.top),
         width: bubble.offsetWidth,
         height: bubble.offsetHeight,
-        speed: 0.5 + Math.random() * 0.75, // Random speed between 0.5 and 1
+        speed: 0.5 + Math.random() * 0.5, // Random speed between 0.5 and 1
         isMoving: true,
         isNew: message.isNew,
         id: Date.now() + Math.random() // Unique ID for this bubble
@@ -1218,91 +1211,134 @@
         }
     });
 
-  // Navigation functionality
-        document.addEventListener('DOMContentLoaded', function() {
-            const navbar = document.getElementById('navbar');
-            const navToggle = document.getElementById('navToggle');
-            const navMenu = document.getElementById('navMenu');
-            const navLinks = document.querySelectorAll('.nav-link');
-            let lastScrollY = window.scrollY;
-            
-            // Toggle mobile menu
-            navToggle.addEventListener('click', function() {
-            navMenu.classList.toggle('active');
-            const icon = navToggle.querySelector('i');
-            if (navMenu.classList.contains('active')) {
-                feather.icons.x.replaceFeather(icon);
-            } else {
-                feather.icons.menu.replaceFeather(icon);
+  // Navigation functionality// Navigation functionality
+document.addEventListener('DOMContentLoaded', function() {
+    const navbar = document.getElementById('navbar');
+    const navToggle = document.getElementById('navToggle');
+    const navMenu = document.getElementById('navMenu');
+    const navLinks = document.querySelectorAll('.nav-link');
+    const navLogo = document.querySelector('.nav-logo');
+    let lastScrollY = window.scrollY;
+    let menuOpen = false;
+    
+    // Toggle mobile menu
+    navToggle.addEventListener('click', function(e) {
+        e.stopPropagation(); // Prevent this click from triggering the document click handler
+        toggleMenu();
+    });
+    
+    // Function to toggle menu
+    function toggleMenu() {
+        navMenu.classList.toggle('active');
+        menuOpen = navMenu.classList.contains('active');
+        const icon = navToggle.querySelector('i');
+        if (menuOpen) {
+            feather.icons.x.replaceFeather(icon);
+        } else {
+            feather.icons.menu.replaceFeather(icon);
+        }
+    }
+    
+    // Close menu when clicking on a link
+    navLinks.forEach(link => {
+        link.addEventListener('click', function() {
+            if (window.innerWidth <= 768) {
+                closeMenu();
             }
-            });
+        });
+    });
+    
+    // Close menu when clicking outside
+    document.addEventListener('click', function(e) {
+        if (menuOpen && !navMenu.contains(e.target) && e.target !== navToggle) {
+            closeMenu();
+        }
+    });
+    
+    // Close menu function
+    function closeMenu() {
+        navMenu.classList.remove('active');
+        menuOpen = false;
+        feather.icons.menu.replaceFeather(navToggle.querySelector('i'));
+    }
+    
+    // Nav logo click - scroll to hero section
+    navLogo.addEventListener('click', function(e) {
+        e.preventDefault();
+        closeMenu(); // Close menu if open
+        
+        // Scroll to hero section
+        const heroSection = document.querySelector('.hero-bg');
+        if (heroSection) {
+            const targetPosition = heroSection.offsetTop - 80; // Adjust for header height
             
-            // Close mobile menu when clicking on a link
-            navLinks.forEach(link => {
-            link.addEventListener('click', function() {
-                if (window.innerWidth <= 768) {
-                navMenu.classList.remove('active');
-                feather.icons.menu.replaceFeather(navToggle.querySelector('i'));
-                }
+            window.scrollTo({
+                top: targetPosition,
+                behavior: 'smooth'
             });
-            });
-            
-            // Hide navbar on scroll down, show on scroll up
-            window.addEventListener('scroll', function() {
-            if (window.innerWidth > 768) {
-                if (window.scrollY > lastScrollY && window.scrollY > 100) {
+        }
+    });
+    
+    // Hide navbar on scroll down, show on scroll up
+    window.addEventListener('scroll', function() {
+        if (window.innerWidth > 768) {
+            if (window.scrollY > lastScrollY && window.scrollY > 100) {
                 navbar.classList.add('nav-hidden');
-                } else {
+            } else {
                 navbar.classList.remove('nav-hidden');
-                }
             }
-            lastScrollY = window.scrollY;
-            });
+        }
+        lastScrollY = window.scrollY;
+    });
+    
+    // Add active class to current section in navigation
+    function updateActiveNav() {
+        const sections = document.querySelectorAll('section[id]');
+        const scrollY = window.pageYOffset;
+        
+        sections.forEach(section => {
+            const sectionHeight = section.offsetHeight;
+            const sectionTop = section.offsetTop - 100;
+            const sectionId = section.getAttribute('id');
             
-            // Add active class to current section in navigation
-            function updateActiveNav() {
-            const sections = document.querySelectorAll('section[id]');
-            const scrollY = window.pageYOffset;
-            
-            sections.forEach(section => {
-                const sectionHeight = section.offsetHeight;
-                const sectionTop = section.offsetTop - 100;
-                const sectionId = section.getAttribute('id');
-                
-                if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
+            if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
                 document.querySelector(`.nav-link[href="#${sectionId}"]`).classList.add('active');
-                } else {
+            } else {
                 document.querySelector(`.nav-link[href="#${sectionId}"]`).classList.remove('active');
-                }
-            });
             }
+        });
+    }
+    
+    window.addEventListener('scroll', updateActiveNav);
+    
+    // Smooth scroll for navigation links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            e.preventDefault();
             
-            window.addEventListener('scroll', updateActiveNav);
+            const targetId = this.getAttribute('href');
+            if (targetId === '#') return;
             
-            // Smooth scroll for navigation links
-            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function(e) {
-                e.preventDefault();
-                
-                const targetId = this.getAttribute('href');
-                if (targetId === '#') return;
-                
-                const targetElement = document.querySelector(targetId);
-                if (targetElement) {
+            const targetElement = document.querySelector(targetId);
+            if (targetElement) {
                 const targetPosition = targetElement.offsetTop - 80; // Adjust for header height
                 
                 window.scrollTo({
                     top: targetPosition,
                     behavior: 'smooth'
                 });
+                
+                // Close menu on mobile after clicking a link
+                if (window.innerWidth <= 768) {
+                    closeMenu();
                 }
-            });
-            });
-            
-            // Initialize feather icons for the menu toggle
-            feather.replace();
+            }
         });
-
+    });
+    
+    // Initialize feather icons for the menu toggle
+    feather.replace();
+});
     </script>
 </body>
 
