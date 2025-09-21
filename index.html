@@ -1010,7 +1010,15 @@
         '#e6d6ff', '#fffbd6', '#d6f0ff', '#ffd6d6',
         '#d6e4ff', '#ffd6f3', '#e7ffd6', '#d6fff0'
         ];
-        const color = colors[Math.floor(Math.random() * colors.length)];
+        // const color = colors[Math.floor(Math.random() * colors.length)];
+
+if (typeof colorIndex === 'undefined') {
+    colorIndex = 0;
+}
+
+// Get the next color in sequence
+const color = colors[colorIndex % colors.length];
+colorIndex++;
         
         // Apply background color
         bubble.style.backgroundColor = color;
