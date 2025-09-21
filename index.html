@@ -16,7 +16,7 @@
     <meta property="og:url" content="https://enosiii.github.io/ZhiHan_ZhenHan/">
     <meta property="og:title" content="Zhi Han's 2nd Birthday & Zhen Han's Dedication">
     <meta property="og:description" content="Join us in celebrating Zhi Han's 2nd Birthday & Zhen Han's Dedication on December 7, 2025">
-    <!-- <meta property="og:image" content="https://yourwebsite.com/images/about.jpg"> -->
+    <meta property="og:image" content="https://enosiii.github.io/ZhiHan_ZhenHan/images/zh512.png">
 
 
     <link rel="icon" type="image/x-icon" href="/static/favicon.ico">
@@ -152,6 +152,15 @@
     animation: fadeIn 0.8s ease forwards;
   }
   
+   
+  
+  .bubble-xs {
+    max-width: 150px;
+    min-width: 90px;
+    min-height: 50px;
+    font-size: 0.7em;
+  }
+
   .bubble-small {
     max-width: 180px;
     min-width: 120px;
@@ -216,7 +225,7 @@
   #bubble-container {
     position: relative;
     width: 100%;
-    height: 400px; /* Fixed height to prevent covering title */
+    height: 500px; /* Fixed height to prevent covering title */
     margin: 0 auto;
     overflow: hidden;
   }
@@ -338,7 +347,14 @@
     
     .nav-toggle {
       display: block;
+      position: absolute;
+      left: 20px;
     }
+    
+    .nav-logo {
+    margin-left: 30px; /* Adjust this value as needed */
+    /*text-align: center;*/
+    flex: 1;
   }
   
   /* Smooth scrolling */
@@ -354,11 +370,168 @@
     <!-- Add this HTML right after the <body> tag -->
         <div class="nav-container" id="navbar">
         <div class="nav-content">
-            <a href="#" class="nav-logo">Zhi Han & Zhen Han</a>
+            <a href="#hero" class="nav-logo">Zhi Han & Zhen Han</a>
             
             <button class="nav-toggle" id="navToggle">
             <i data-feather="menu"></i>
             </button>
+            
+            <ul class="nav-menu" id="navMenu">
+            <li><a href="#venue" class="nav-link">Venue</a></li>
+            <li><a href="#attire" class="nav-link">Attire</a></li>
+            <li><a href="#gifts" class="nav-link">Gifts</a></li>
+            <li><a href="#details" class="nav-link">Details</a></li>
+            <li><a href="#gallery" class="nav-link">Gallery</a></li>
+            <li><a href="#wishes" class="nav-link">Wishes</a></li>
+            <li><a href="#sendwishes" class="nav-link">Send Wishes</a></li>
+            </ul>
+        </div>
+        </div>
+
+
+    <!-- Confetti Animation -->
+    <div id="confetti-container"></div>
+
+    <!-- Hero Section with Overlay Banner -->
+    <section class="hero-bg min-h-screen flex items-center justify-center relative overflow-hidden">
+        <!-- Banner Image Overlay -->
+        <div class="absolute top-0 left-0 w-full z-20">
+            <img src="images/banner1.png" alt="Celebration Banner" class="banner-img">
+        </div>
+        
+        <div class="absolute w-full h-full overflow-hidden">
+            <div class="absolute top-0 left-0 w-full h-full bg-gradient-to-b from-transparent to-white opacity-30"></div>
+        </div>
+        
+        <div id="hero" class="container mx-auto px-6 py-20 text-center relative z-10 mt-40 md:mt-48" data-aos="fade-up">
+            <h1 class="text-4xl md:text-6xl font-bold text-pink-600 mb-4">You're Invited!</h1>
+            <p class="text-xl md:text-2xl text-blue-600 mb-8">Join us in celebrating Zhi Han's 2nd Birthday & Zhen Han's Dedication</p>
+            
+            <div class="flex justify-center mb-12">
+                <div class="w-32 h-32 md:w-40 md:h-40 rounded-full bg-white shadow-lg mx-2 flex items-center justify-center overflow-hidden floating">
+                    <img src="images/zhi.jpg" alt="Zhi Han" class="w-full h-full object-cover">
+                </div>
+                <div class="w-32 h-32 md:w-40 md:h-40 rounded-full bg-white shadow-lg mx-2 flex items-center justify-center overflow-hidden floating" style="animation-delay: 0.5s;">
+                    <img src="images/zhen.jpg" alt="Zhen Han" class="w-full h-full object-cover">
+                </div>
+            </div>
+            
+            <div class="bg-white bg-opacity-80 rounded-xl p-6 max-w-2xl mx-auto shadow-lg">
+                <div class="flex flex-col md:flex-row justify-around items-center mb-6">
+                    <div class="flex items-center mb-4 md:mb-0">
+                        <i data-feather="calendar" class="text-pink-500 mr-2"></i>
+                        <span class="text-gray-700">December 7, 2025</span>
+                    </div>
+                    <div class="flex items-center mb-4 md:mb-0">
+                        <i data-feather="clock" class="text-blue-500 mr-2"></i>
+                        <span class="text-gray-700">11:00 AM</span>
+                    </div>
+                    <div class="flex items-center">
+                        <i data-feather="map-pin" class="text-purple-500 mr-2"></i>
+                        <span class="text-gray-700">Casa Poblacion Plaridel</span>
+                    </div>
+                </div>
+                
+                <div id="countdown" class="text-3xl md:text-4xl font-bold mb-6 bg-gradient-to-r from-pink-500 to-blue-500 bg-clip-text text-transparent">
+                    Loading...
+                </div>
+                
+                <a href="https://maps.app.goo.gl/AS6rYRM8EcP5E2YTA" target="_blank" class="inline-flex items-center px-6 py-3 bg-blue-500 hover:bg-blue-600 text-white rounded-full transition duration-300 shadow-lg">
+                    <i data-feather="map" class="mr-2"></i> Open in Google Maps
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Venue Section -->
+    <section id="venue" class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold text-center mb-8 text-blue-600" data-aos="fade-up">Venue Details</h2>
+            
+            <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+                <div class="space-y-4" data-aos="fade-right">
+                    <div class="rounded-xl overflow-hidden shadow-md">
+                        <img src="images/venue1.jpg" alt="Venue Image 1" class="w-full h-64 object-cover">
+                    </div>
+                    <div class="rounded-xl overflow-hidden shadow-md">
+                        <img src="images/venue2.jpg" alt="Venue Image 2" class="w-full h-64 object-cover">
+                    </div>
+                </div>
+                
+                <div class="flex flex-col justify-center" data-aos="fade-left">
+                    <h3 class="text-2xl font-bold text-pink-600 mb-4">Location</h3>
+                    <h3 class="text-2xl font-bold text-blue-600 mb-4">Casa Poblacion Plaridel</h3>
+                    <p class="text-gray-700 mb-6">Join us for this special celebration. The venue will be decorated with love to create a joyful atmosphere for our little ones' milestones.</p>
+                    
+                    <a href="https://maps.app.goo.gl/AS6rYRM8EcP5E2YTA" target="_blank" class="inline-flex items-center px-6 py-3 bg-blue-500 hover:bg-blue-600 text-white rounded-full transition duration-300 shadow-lg w-full justify-center">
+                        <i data-feather="map" class="mr-2"></i> Open in Google Maps
+                    </a>
+
+                    <p class="text-gray-700 mb-6"><br>We're so excited to have you! Just a heads up, the venue has limited parking (about 10 cars), but it's very convenient to get there by public transportation.</p>
+                    
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Attire Section -->
+    <section id="attire" class="py-20 bg-gradient-to-br from-pink-50 to-blue-50">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold text-center mb-8 text-pink-600" data-aos="fade-up">Dress Code</h2>
+            
+            <div class="max-w-4xl mx-auto">
+                <p class="text-center text-gray-700 mb-8" data-aos="fade-up">
+                    We would appreciate it if our guests could join us in wearing light, joyful colors to match our celebration theme.
+                </p>
+                
+                <div class="grid md:grid-cols-2 gap-8">
+                    <div class="bg-white rounded-xl p-6 shadow-md" data-aos="fade-right">
+                        <div class="rounded-xl overflow-hidden shadow-md mb-4">
+                            <img src="images/GP.jpg" alt="Godparents Attire" class="w-full h-48 object-cover">
+                        </div>
+                        <h3 class="text-xl font-bold text-blue-600 mb-2">For Godparents</h3>
+                        <p class="text-gray-700">We kindly request our beloved godparents to wear white attire for the dedication ceremony.</p>
+                    </div>
+                    
+                    <div class="bg-yellow-50 rounded-xl p-6 shadow-md" data-aos="fade-left">
+                        <div class="rounded-xl overflow-hidden shadow-md mb-4">
+                            <img src="images/guest.jpg" alt="Guest Attire" class="w-full h-48 object-cover">
+                        </div>
+                        <h3 class="text-xl font-bold text-pink-600 mb-2">For Other Guests</h3>
+                        <p class="text-gray-700">We invite all other guests to wear light pastel colors to create a harmonious and festive atmosphere.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gift Suggestions -->
+    <section id="gifts" class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold text-center mb-8 text-blue-600" data-aos="fade-up">Gift Suggestions</h2>
+            
+            <p class="text-center text-gray-700 max-w-2xl mx-auto mb-12" data-aos="fade-up">
+                Your presence is the greatest gift, but if you'd like to bring something, here are a few ideas that would be appreciated:
+            </p>
+            
+            <div class="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+
+                <div class="gift-item bg-pink-50 rounded-xl p-6 text-center shadow-md" data-aos="fade-up" data-aos-delay="0">
+                    
+                    <h3 class="text-xl font-bold text-pink-600 mb-2">Books</h3>
+                    <p class="text-gray-700">Educational books for developing young minds</p>
+
+                    <div class="rounded-xl overflow-hidden shadow-md mb-4 mx-auto w-50 h-50">
+                        <img src="images/book.jpg" alt="Books" class="w-full h-full object-cover">
+                    </div>
+                </div>
+                
+                <div class="gift-item bg-blue-50 rounded-xl p-6 text-center shadow-md" data-aos="fade-up" data-aos-delay="200">
+                    
+                    <h3 class="text-xl font-bold text-blue-600 mb-2">Clothing</h3>
+                    <p class="text-gray-700">Size 2-3 y/o for Zhi Han, 1-2 y/o for Zhen Han</p>
+
+                    <div class="rounded-xl ov</button>
             
             <ul class="nav-menu" id="navMenu">
             <li><a href="#venue" class="nav-link">Venue</a></li>
@@ -1282,4 +1455,5 @@
 </body>
 
 </html>
+
 
