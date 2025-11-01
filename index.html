@@ -35,6 +35,14 @@
     <meta name="twitter:image" content="https://zhihan-zhenhan-invitation.vercel.app/images/cover.jpg" />
     <meta name="twitter:image:width" content="800" />
     <meta name="twitter:image:height" content="420" />
+    
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#007bff">
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/exceljs/4.3.0/exceljs.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.5/FileSaver.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
     <link rel="icon" type="image/x-icon" href="/static/favicon.ico">
     <script src="https://cdn.jsdelivr.net/npm/add-to-calendar-button@2" async defer></script>
@@ -397,6 +405,43 @@ html {
 }
 
 
+    .install-container {
+            text-align: center;
+            margin-top: 2rem;
+        }
+
+        /* #ff7eb9', '#7afcff', '#ff65a3', '#5DE2E7', '#CC6CE7' , '#060270' */
+
+        #installPWA {
+            padding: 15px 30px;
+            background: linear-gradient(to right, #ff7eb9, #fc4296); 
+            color: white;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(67, 97, 238, 0.3);
+            align-items: center;
+        }
+        
+        #installPWA i {
+            margin-right: 10px;
+        }
+        
+        #installPWA:hover {
+            background: linear-gradient(to right, #3498db, #2980b9);
+            color: white;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(67, 97, 238, 0.4);
+        }
+        
+        #installPWA:active {
+            transform: translateY(0);
+        }
+
+
     </style>
 </head>
 <body class="relative">
@@ -490,27 +535,13 @@ html {
                             hideCheckmark
                         ></add-to-calendar-button>
                     </div>
-<!--                     
-                    <div class="button-wrapper">
-                        
-                        <add-to-calendar-button 
-                            name="2nd Birthday of Zhi Han and Dedication of Zhen Han 🎉"
-                            startDate="2025-12-07"
-                            location="Casa Poblacion Events Place - Plaridel"
-                            description="2nd Birthday of Zhi Han and Dedication of Zhen Han 🎉&#10;Date: December 7, 2025&#10;Time: 11:30am&#10;Venue: Casa Poblacion Events Place - Plaridel &#10;Invitation: https://zhihan-zhenhan.vercel.app/"
-                            timeZone="Asia/Manila"
-                            options="['Apple']"
-                            allDay="true"
-                            label="Add to Calendar (Apple)"
-                            listStyle="modal"
-                            buttonsList
-                            hideBackground
-                            hideCheckmark
-                        ></add-to-calendar-button>
-                    </div> -->
                 </div>
-
-
+                
+                <div class="install-container">
+                    <button id="installPWA" style="display: none;" >
+                        <i class="fas fa-download"></i> Install App
+                    </button>
+                </div>
                 
                 <!-- <a href="https://maps.app.goo.gl/BhiZZmDgv9HyRn4F9" target="_blank" class="inline-flex items-center px-6 py-3 bg-blue-500 hover:bg-blue-600 text-white rounded-full transition duration-300 shadow-lg">
                     <i data-feather="map" class="mr-2"></i> Open in Google Maps
@@ -775,10 +806,17 @@ html {
     <!-- Footer -->
     <footer class="py-8 bg-white border-t border-gray-200">
         <div class="container mx-auto px-6 text-center">
+            
             <p class="text-gray-600">We can't wait to celebrate with you!</p>
             <p class="text-gray-500 mt-2">December 7, 2025 • Casa Poblacion</p>
             <p class="text-gray-400 text-sm mt-2">Created with ❤️ for our little ones</p>
+
         </div>
+        <div class="install-container">
+                <button id="installPWA" style="display: none;" >
+                    <i class="fas fa-download"></i> Install App
+                </button>
+            </div>
     </footer>
 
     <script>
@@ -1425,6 +1463,19 @@ document.addEventListener('DOMContentLoaded', function() {
     feather.replace();
   });
     </script>
-</body>
 
+        <script src="install.js"></script>
+    <script>
+        if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.register('/sw.js', { scope: '/' })
+            .then((registration) => {
+            console.log('Service Worker registered with scope:', registration.scope);
+            })
+            .catch((error) => {
+            console.error('Service Worker registration failed:', error);
+            });
+        }
+    </script>
+
+</body>
 </html>

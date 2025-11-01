@@ -1,0 +1,23 @@
+{
+    "id": "/zhizhen/",
+    "short_name": "Zhi Han & Zhen Han",
+    "name": "Zhi Han & Zhen Han Celebration",
+    "description": "Zhi Han 2nd Birthday & Zhen Han Full Month Celebration Invitation App",
+    "icons": [
+      {
+        "src": "images/zh192.png",
+        "type": "image/png",
+        "sizes": "192x192"
+      },
+      {
+        "src": "images/zh512.png",
+        "type": "image/png",
+        "sizes": "512x512"
+      }
+    ],
+    "start_url": "/ZhiHan_ZhenHan/index.html",
+    "background_color": "#f9f9f9",
+    "display": "standalone",
+    "scope": "/ZhiHan_ZhenHan/",
+    "theme_color": "#3498db"
+}
