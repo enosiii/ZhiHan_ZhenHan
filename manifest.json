@@ -15,9 +15,9 @@
         "sizes": "512x512"
       }
     ],
-    "start_url": "/ZhiHan_ZhenHan/index.html",
+    "start_url": "/index.html",
     "background_color": "#f9f9f9",
     "display": "standalone",
-    "scope": "/ZhiHan_ZhenHan/",
+    "scope": "/",
     "theme_color": "#3498db"
 }
